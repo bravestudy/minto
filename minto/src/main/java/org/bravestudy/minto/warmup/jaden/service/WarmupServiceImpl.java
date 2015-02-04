@@ -3,7 +3,7 @@ package org.bravestudy.minto.warmup.jaden.service;
 import org.bravestudy.minto.warmup.common.model.SampleUserForm;
 import org.bravestudy.minto.warmup.common.model.SampleUserView;
 import org.bravestudy.minto.warmup.common.vo.SampleUserVo;
-import org.bravestudy.minto.warmup.jaden.repository.MvcRepository;
+import org.bravestudy.minto.warmup.jaden.repository.WarmupRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,18 +13,18 @@ import org.springframework.transaction.annotation.Transactional;
 
 /**
  * @author 	Jaden.Lee
- * @file 			MvcServiceImpl.java
+ * @file 			WarmupServiceImpl.java
  * @since		February 04, 2015.
  * @version	1.0.0
  */
-@Service("jadenMvcServiceImpl")
-public class MvcServiceImpl implements MvcService {
+@Service("jadenWarmupServiceImpl")
+public class WarmupServiceImpl implements WarmupService {
 	
-	private static final Logger logger = LoggerFactory.getLogger(MvcServiceImpl.class);
+	private static final Logger logger = LoggerFactory.getLogger(WarmupServiceImpl.class);
 	
 	@Autowired
-	@Qualifier("jadenMvcRepositoryImpl")
-	private MvcRepository repository;
+	@Qualifier("jadenWarmupRepositoryImpl")
+	private WarmupRepository repository;
 	
 	
 	@Transactional(rollbackFor=Exception.class)

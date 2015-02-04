@@ -1,5 +1,5 @@
 package org.bravestudy.minto.warmup.jake.repository;
 
-public interface MvcRepository {
+public interface WarmupRepository {
 
 }

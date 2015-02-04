@@ -8,15 +8,15 @@ import org.springframework.stereotype.Repository;
 
 /**
  * @author 	Jaden.Lee
- * @file 			MvcRepositoryImpl.java
+ * @file 			WarmupRepositoryImpl.java
  * @since		February 04, 2015.
  * @version	1.0.0
  */
-@Repository("jadenMvcRepositoryImpl")
-public class MvcRepositoryImpl extends BaseRepositorySupport implements MvcRepository {
+@Repository("jadenWarmupRepositoryImpl")
+public class WarmupRepositoryImpl extends BaseRepositorySupport implements WarmupRepository {
 	
 	@SuppressWarnings("unused")
-	private static final Logger logger = LoggerFactory.getLogger(MvcRepositoryImpl.class);
+	private static final Logger logger = LoggerFactory.getLogger(WarmupRepositoryImpl.class);
 	
 	@Override
 	public int insert(SampleUserVo vo) {

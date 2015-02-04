@@ -2,7 +2,7 @@ package org.bravestudy.minto.warmup.jaden.controller;
 
 import org.bravestudy.minto.warmup.common.model.SampleUserForm;
 import org.bravestudy.minto.warmup.common.model.SampleUserView;
-import org.bravestudy.minto.warmup.jaden.service.MvcService;
+import org.bravestudy.minto.warmup.jaden.service.WarmupService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
@@ -13,16 +13,16 @@ import org.springframework.web.servlet.ModelAndView;
 
 /**
  * @author 	Jaden.Lee
- * @file 			MvcController.java
+ * @file 			WarmupController.java
  * @since		February 04, 2015.
  * @version	1.0.0
  */
-@Controller("jadenMvcController")
-public class MvcController {
+@Controller("jadenWarmupController")
+public class WarmupController {
 	
 	@Autowired
-	@Qualifier("jadenMvcServiceImpl")
-	private MvcService service;
+	@Qualifier("jadenWarmupServiceImpl")
+	private WarmupService service;
 	
 	@RequestMapping(value="/warmup/sampleuser", method=RequestMethod.GET)
 	public ModelAndView getForm(){

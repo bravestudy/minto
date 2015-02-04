@@ -5,11 +5,11 @@ import org.bravestudy.minto.warmup.common.model.SampleUserView;
 
 /**
  * @author 	Jaden.Lee
- * @file 			MvcService.java
+ * @file 			WarmupService.java
  * @Since 		February 04, 2015.
  * @version 	1.0.0
  */
-public interface MvcService {
+public interface WarmupService {
 	
 	SampleUserView insertSampleUser(SampleUserForm form);
 
