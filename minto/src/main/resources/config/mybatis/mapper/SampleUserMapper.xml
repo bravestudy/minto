@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="SampleUser">
+
+    <resultMap id="sampleUserMap" type="org.bravestudy.minto.warmup.common.vo.SampleUserVo">
+        <id		property="id" column="id" />
+        <result 	property="name" column="name" />
+        <result 	property="email" column="email" />
+    </resultMap>
+ 
+    <select id="selectAll" resultMap="sampleUserMap">
+        SELECT id
+               ,name
+               ,email
+        FROM sample_user
+    </select>
+ 
+    <select id="select" resultMap="sampleUserMap">
+        SELECT id
+               ,name
+               ,email
+        FROM sample_user
+        WHERE id = #{id}
+    </select>
+     
+    <insert id="insert" keyProperty="id" useGeneratedKeys="true">
+        INSERT INTO sample_user (
+            name
+            ,email
+        ) VALUES (
+            #{name}
+            ,#{email}
+        )
+    </insert>
+     
+    <update id="update">
+        UPDATE sample_user
+        SET name = #{name}
+              ,email = #{email}
+        WHERE id = #{id}
+    </update>
+     
+    <delete id="delete">
+        DELETE 
+        FROM sample_user
+        WHERE id = #{id}
+    </delete>
+        
+	<!--     
+	<insert id="add" keyProperty="id">
+        <selectKey keyProperty="id" resultType="int" order="BEFORE">  
+            SELECT COALESCE(MAX(id), 0) + 1 AS id 
+            FROM sample_user
+        </selectKey>
+ 
+        INSERT INTO sample_user (
+             id
+            ,name
+            ,email
+        ) VALUES (
+             #{id}
+            ,#{name}
+            ,#{email}
+        )
+    </insert> 
+    -->
+</mapper>
