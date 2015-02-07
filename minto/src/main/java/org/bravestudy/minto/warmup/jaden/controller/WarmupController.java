@@ -24,14 +24,14 @@ public class WarmupController {
 	@Qualifier("jadenWarmupServiceImpl")
 	private WarmupService service;
 	
-	@RequestMapping(value="/warmup/sampleuser", method=RequestMethod.GET)
+	@RequestMapping(value="/warmup/jaden/sampleuser", method=RequestMethod.GET)
 	public ModelAndView getForm(){
 		ModelAndView mav = new ModelAndView();
 		mav.setViewName("warmup/jaden/sample_user_insert");
 		return mav;
 	}
 	
-	@RequestMapping(value="/warmup/sampleuser", method=RequestMethod.POST)
+	@RequestMapping(value="/warmup/jaden/sampleuser", method=RequestMethod.POST)
 	public ModelAndView postForm(@ModelAttribute SampleUserForm form){
 		SampleUserView viewModel = service.insertSampleUser(form);
 		ModelAndView mav = new ModelAndView();

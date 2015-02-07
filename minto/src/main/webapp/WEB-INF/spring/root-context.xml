@@ -24,8 +24,13 @@
 
 	<context:annotation-config/>
 
-	<context:component-scan base-package="org.bravestudy.**.service, org.bravestudy.**.repository
-		org.bravestudy.**.component"/>
+<!-- 내부적으로 사용하는 빈 위치 위주, 명시적으로 -->
+
+	<context:component-scan base-package="
+		org.bravestudy.**.service, 
+		org.bravestudy.**.repository
+		org.bravestudy.**.component"
+	/>
 
 	<bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
 		<property name="locations">
