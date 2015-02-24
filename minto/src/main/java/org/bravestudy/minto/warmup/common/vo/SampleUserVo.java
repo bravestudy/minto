@@ -1,5 +1,6 @@
 package org.bravestudy.minto.warmup.common.vo;
 
+
 /**
  * @author 	Jaden.Lee
  * @file 			SampleUserVo.java

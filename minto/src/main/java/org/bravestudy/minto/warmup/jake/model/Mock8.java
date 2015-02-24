@@ -1,5 +1,5 @@
 package org.bravestudy.minto.warmup.jake.model;
 
-public class Mock {
+public class Mock8 {
 
 }

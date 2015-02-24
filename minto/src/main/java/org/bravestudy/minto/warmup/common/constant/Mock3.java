@@ -1,5 +1,5 @@
 package org.bravestudy.minto.warmup.common.constant;
 
-public class Mock {
+public class Mock3 {
 
 }

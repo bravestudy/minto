@@ -1,11 +1,25 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"  "http://mybatis.org/dtd/mybatis-3-config.dtd">
-
 <configuration>
 
-	<!-- Mapping Files -->
-    <mappers>
-        <mapper resource="config/mybatis/mapper/SampleUserMapper.xml" />
-    </mappers>
- 
+	<!-- 
+	cf ) mybatis configuration
+	https://mybatis.github.io/mybatis-3/ko/configuration.html
+	
+	<typeAliases>
+		<package name="org.bravestudy.minto" />
+	</typeAliases>
+	
+	<mappers>
+	    <mapper resource="config/mybatis/mapper/SampleUserMapper.xml" />
+	</mappers>
+	-->
+	
+	<typeAliases>
+		<typeAlias alias="sampleUserVo" type="org.bravestudy.minto.warmup.common.vo.SampleUserVo"/>
+	</typeAliases>
+	
+	
+	<typeHandlers>
+	</typeHandlers>
 </configuration>

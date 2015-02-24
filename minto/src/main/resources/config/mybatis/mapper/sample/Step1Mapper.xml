@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="sample">
+   	
+   	<select id="queryTest" resultType="java.util.Map">
+		show tables
+	</select>
+	
+	<select id="selectAll" resultType="java.util.Map">
+        SELECT id
+               ,name
+               ,email
+        FROM sample_user
+    </select>
+    
+    <select id="selectAllByClass" resultType="sampleUserVo">
+        SELECT id
+               ,name
+               ,email
+        FROM sample_user
+    </select>
+    
+</mapper>

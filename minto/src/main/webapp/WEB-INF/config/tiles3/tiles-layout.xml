@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+
+<!-- This is a blank Tiles definition file with a commented example. -->
+<tiles-definitions>
+	<definition name="default" template="/WEB-INF/views/layouts/default/template.jsp">  
+        <put-attribute name="title" value="dragon project" />  
+        <put-attribute name="meta" value="/WEB-INF/views/layouts/default/meta.jsp" />
+        <put-attribute name="header" value="/WEB-INF/views/layouts/default/header.jsp" />  
+        <put-attribute name="body" value="" />  
+        <put-attribute name="footer" value="/WEB-INF/views/layouts/default/footer.jsp" />  
+    </definition>  
+    
+    <!-- A10Admin Base Template -->
+	<definition name="adminDefault" template="/WEB-INF/views/layouts/admin/template.jsp">
+		<put-attribute name="title"  value="A10tion Administrator" />  
+        <put-attribute name="meta" 	 value="/WEB-INF/views/layouts/admin/meta.jsp" />
+        <put-attribute name="css"    value="/WEB-INF/views/layouts/admin/css.jsp" />
+        <put-attribute name="script" value="/WEB-INF/views/layouts/admin/script.jsp" />
+        <put-attribute name="header" value="/WEB-INF/views/layouts/admin/header.jsp" />
+        <put-attribute name="left" 	 value="/WEB-INF/views/layouts/admin/left.jsp" />
+        <put-attribute name="body" 	 value="" />
+	</definition>
+	
+	<!-- A10Admin partner Template -->
+	<definition name="partnerDefault" template="/WEB-INF/views/layouts/admin/template.jsp">
+		<put-attribute name="title"  value="A10tion Administrator" />  
+        <put-attribute name="meta" 	 value="/WEB-INF/views/layouts/admin/meta.jsp" />
+        <put-attribute name="css"    value="/WEB-INF/views/layouts/admin/css.jsp" />
+        <put-attribute name="script" value="/WEB-INF/views/layouts/admin/script.jsp" />
+        <!-- partner -->
+        <put-attribute name="header" value="/WEB-INF/views/layouts/partner/header.jsp" />
+        <put-attribute name="left" 	 value="/WEB-INF/views/layouts/admin/left.jsp" />
+        <put-attribute name="body" 	 value="" />
+	</definition>
+	
+	<!-- A10Admin Counsel Base Template -->
+	<definition name="counselDefault" template="/WEB-INF/views/layouts/cspopup/template.jsp">
+		<put-attribute name="title"  value="A10tion Administrator" />  
+        <put-attribute name="meta" 	 value="/WEB-INF/views/layouts/cspopup/meta.jsp" />
+        <put-attribute name="css"    value="/WEB-INF/views/layouts/cspopup/css.jsp" />
+        <put-attribute name="script" value="/WEB-INF/views/layouts/cspopup/script.jsp" />
+        <put-attribute name="body" 	 value="" />
+	</definition>
+	
+	<!-- None Template -->
+    <definition name="none" template="/WEB-INF/views/layouts/noneTemplate.jsp">
+        <put-attribute name="body" value="" />
+    </definition>  
+    
+	<definition name="/sample/*" extends="default">
+		<put-attribute name="body" value="/WEB-INF/views/sample/{1}.jsp" />
+	</definition>
+	
+	<definition name="/sample/*/*" extends="default">
+		<put-attribute name="body" value="/WEB-INF/views/sample/{1}/{2}.jsp" />
+	</definition>
+	
+	<!-- 404 not found page -->
+	<definition name="/error/404" extends="none">
+        <put-attribute name="body" value="/WEB-INF/views/error/404.jsp" />
+    </definition>
+    
+    <!-- exception page -->
+    <definition name="/error/500" extends="adminDefault">
+        <put-attribute name="body" value="/WEB-INF/views/error/500.jsp" />
+    </definition>
+   
+	<definition name="/admin/main.html" extends="adminDefault">
+		<put-attribute name="body" value="/WEB-INF/views/admin/main.jsp" />
+	</definition>	
+	 	
+	<definition name="/admin/product/*" extends="adminDefault">
+		<put-attribute name="body" value="/WEB-INF/views/admin/product/{1}.jsp" />
+	</definition>
+	
+	<definition name="/admin/product/*/*" extends="adminDefault">
+		<put-attribute name="body" value="/WEB-INF/views/admin/product/{1}/{2}.jsp" />
+	</definition>
+	
+	<definition name="/admin/product/*/*/*" extends="adminDefault">
+		<put-attribute name="body" value="/WEB-INF/views/admin/product/{1}/{2}/{3}.jsp" />
+	</definition>
+	
+		<definition name="/admin/assemble/*" extends="adminDefault">
+		<put-attribute name="body" value="/WEB-INF/views/admin/assemble/{1}.jsp" />
+	</definition>
+	
+	<definition name="/admin/assemble/*/*" extends="adminDefault">
+		<put-attribute name="body" value="/WEB-INF/views/admin/assemble/{1}/{2}.jsp" />
+	</definition>
+	
+	<definition name="/admin/assemble/*/*/*" extends="adminDefault">
+		<put-attribute name="body" value="/WEB-INF/views/admin/assemble/{1}/{2}/{3}.jsp" />
+	</definition>
+	
+	<definition name="/admin/environment/*" extends="adminDefault">
+		<put-attribute name="body" value="/WEB-INF/views/admin/environment/{1}.jsp" />
+	</definition>
+	
+	<definition name="/admin/environment/*/*" extends="adminDefault">
+		<put-attribute name="body" value="/WEB-INF/views/admin/environment/{1}/{2}.jsp" />
+	</definition>
+	
+	<definition name="/admin/environment/*/*/*" extends="adminDefault">
+		<put-attribute name="body" value="/WEB-INF/views/admin/environment/{1}/{2}/{3}.jsp" />
+	</definition>
+	
+	<definition name="/admin/order/*" extends="adminDefault">
+		<put-attribute name="body" value="/WEB-INF/views/admin/order/{1}.jsp" />
+	</definition>
+	
+	<definition name="/admin/order/*/*" extends="adminDefault">
+		<put-attribute name="body" value="/WEB-INF/views/admin/order/{1}/{2}.jsp" />
+	</definition>
+	
+	<definition name="/admin/order/*/*/*" extends="adminDefault">
+		<put-attribute name="body" value="/WEB-INF/views/admin/order/{1}/{2}/{3}.jsp" />
+	</definition>
+	
+	<definition name="/admin/shop/*/*" extends="adminDefault">
+		<put-attribute name="body" value="/WEB-INF/views/admin/shop/{1}/{2}.jsp" />
+	</definition>
+	
+	<definition name="/admin/shop/*/*/*" extends="adminDefault">
+		<put-attribute name="body" value="/WEB-INF/views/admin/shop/{1}/{2}/{3}.jsp" />
+	</definition>
+	
+	<definition name="/admin/promotion/*/*" extends="adminDefault">
+		<put-attribute name="body" value="/WEB-INF/views/admin/promotion/{1}/{2}.jsp" />
+	</definition>
+	
+	<definition name="/admin/promotion/*/*/*" extends="adminDefault">
+		<put-attribute name="body" value="/WEB-INF/views/admin/promotion/{1}/{2}/{3}.jsp" />
+	</definition>
+
+	<definition name="/admin/corporation/*" extends="adminDefault">
+		<put-attribute name="body" value="/WEB-INF/views/admin/corporation/{1}.jsp" />
+	</definition>
+	
+	<definition name="/admin/corporation/*/*" extends="adminDefault">
+		<put-attribute name="body" value="/WEB-INF/views/admin/corporation/{1}/{2}.jsp" />
+	</definition>
+	
+	
+	<definition name="/popup/*" template="/WEB-INF/views/layouts/popup/template.jsp">
+		<put-attribute name="body" value="/WEB-INF/views/popup/{1}.jsp" />
+	</definition>
+	
+	<definition name="/cspopup/*"  extends="counselDefault">
+		<put-attribute name="body" value="/WEB-INF/views/cspopup/{1}.jsp" />
+	</definition>
+	
+	<definition name="/load/*/*" extends="none">
+        <put-attribute name="body" value="/WEB-INF/views/load/{1}/{2}.jsp" />
+    </definition>
+	
+	<definition name="/admin/counsel/*" extends="adminDefault">
+		<put-attribute name="body" value="/WEB-INF/views/admin/counsel/{1}.jsp" />
+	</definition>
+	
+	<definition name="/admin/counsel/*/*" extends="adminDefault">
+		<put-attribute name="body" value="/WEB-INF/views/admin/counsel/{1}/{2}.jsp" />
+	</definition>
+	
+	<definition name="/admin/partner/*" extends="partnerDefault">
+		<put-attribute name="body" value="/WEB-INF/views/admin/partner/{1}.jsp" />
+	</definition>
+	
+	<definition name="/admin/partner/*/*" extends="partnerDefault">
+		<put-attribute name="body" value="/WEB-INF/views/admin/partner/{1}/{2}.jsp" />
+	</definition>
+
+	<definition name="/admin/operation/*" extends="adminDefault">
+		<put-attribute name="body" value="/WEB-INF/views/admin/operation/{1}.jsp" />
+	</definition>
+	
+	<definition name="/admin/operation/*/*" extends="adminDefault">
+		<put-attribute name="body" value="/WEB-INF/views/admin/operation/{1}/{2}.jsp" />
+	</definition>
+ 	
+</tiles-definitions>

@@ -1,5 +1,5 @@
 package org.bravestudy.minto.user.constant;
 
-public class Mock {
+public class Mock2 {
 
 }

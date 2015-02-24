@@ -1,5 +1,5 @@
 package org.bravestudy.minto.user.component;
 
-public class Mock {
+public class Mock1 {
 
 }
