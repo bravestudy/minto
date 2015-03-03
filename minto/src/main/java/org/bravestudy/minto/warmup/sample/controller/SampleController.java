@@ -5,6 +5,7 @@ import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
 import org.bravestudy.minto.warmup.common.vo.SampleUserVo;
+import org.bravestudy.minto.warmup.sample.service.SampleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -66,7 +67,7 @@ public class SampleController {
 	@RequestMapping(value = "/step1_5", method = RequestMethod.GET)
 	public String step1_5(Model model) {//spring 내에서 해당 타입(Model)에 맵핑되는 객체를 DI(new)해서 바로 사용할 수 있게 해줌
 		
-		//DB 쿼리 실행 - 변경 부분
+		//TODO : DB 쿼리 실행 - 변경 부분
 		List<SampleUserVo> arlList = sql.selectList("sample.selectAll");
 		
 		//model에 데이터를 넣어서 화면에 출력 함 
@@ -75,6 +76,27 @@ public class SampleController {
 		//리턴 되는 값에 맵핑되는 뷰(JSP) 를 찾아줌
 		return "sample/step1_4_for";
 	}
+	
+	
+	
+	@Autowired
+	SampleService sampleService;
+	
+	//step1-6 MVC 패턴 적용
+	@RequestMapping(value = "/step1_6", method = RequestMethod.GET)
+	public String step1_6(Model model) {//spring 내에서 해당 타입(Model)에 맵핑되는 객체를 DI(new)해서 바로 사용할 수 있게 해줌
+		
+		//TODO : service , repository로 이동
+		List<SampleUserVo> arlList = sampleService.getAllUser(); //sql.selectList("sample.selectAll");
+		
+		//model에 데이터를 넣어서 화면에 출력 함 
+		model.addAttribute("sampleFor", arlList);
+		
+		//리턴 되는 값에 맵핑되는 뷰(JSP) 를 찾아줌
+		return "sample/step1_6_mvc";
+	}
+	
+	
 	
 	
 }
