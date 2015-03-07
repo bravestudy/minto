@@ -4,13 +4,19 @@ import java.util.List;
 import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
+import org.bravestudy.minto.warmup.common.model.SampleUserForm;
+import org.bravestudy.minto.warmup.common.model.SampleUserView;
 import org.bravestudy.minto.warmup.common.vo.SampleUserVo;
+import org.bravestudy.minto.warmup.jaden.service.WarmupService;
 import org.bravestudy.minto.warmup.sample.service.SampleService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class SampleController {
@@ -97,6 +103,25 @@ public class SampleController {
 	}
 	
 	
+	@Autowired
+	@Qualifier("jadenWarmupServiceImpl")
+	private WarmupService service;
 	
+	
+	@RequestMapping(value="/sample/step1_7", method=RequestMethod.GET)
+	public ModelAndView getForm(){
+		ModelAndView mav = new ModelAndView();
+		mav.setViewName("sample/step1_7");
+		return mav;
+	}
+	
+	@RequestMapping(value="/sample/step1_7", method=RequestMethod.POST)
+	public ModelAndView postForm(@ModelAttribute SampleUserForm form){
+		SampleUserView viewModel = service.insertSampleUser(form);
+		ModelAndView mav = new ModelAndView();
+		mav.setViewName("warmup/jaden/sample_user_result");
+		mav.addObject("viewModel", viewModel);
+		return mav;
+	}
 	
 }
