@@ -8,6 +8,10 @@
 <h1>
 	Hello world!  
 </h1>
+<%
+String serverTime =  (String)request.getAttribute("serverTime");
+out.print(serverTime);
+%>
 
 <P>  The time on the server is ${serverTime}. </P>
 </body>
