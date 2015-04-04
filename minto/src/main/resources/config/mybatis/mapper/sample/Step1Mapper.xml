@@ -2,6 +2,28 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="sample">
    	
+   	<insert id="insertTop1" parameterType="java.util.Map">
+   	insert into board_content(board_id,title,content,image_url) values(100,#{title},#{content},#{imageUrl})
+   	</insert>
+   	
+   	
+   	<select id="selectTop1" resultType="java.util.Map">
+   	    SELECT title
+               ,content
+               ,image_url
+        FROM board_content
+        WHERE board_id = 100
+   	</select>
+   	
+   	
+   	<select id="selectTop2" resultType="java.util.Map">
+   	    SELECT title
+               ,content
+               ,image_url
+        FROM board_content
+        WHERE board_id = 101
+   	</select>
+   	
    	<select id="queryTest" resultType="java.util.Map">
 		show tables
 	</select>

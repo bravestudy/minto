@@ -14,9 +14,8 @@
 	    <mapper resource="config/mybatis/mapper/SampleUserMapper.xml" />
 	</mappers>
 	-->
-	
 	<typeAliases>
-		<typeAlias alias="sampleUserVo" type="org.bravestudy.minto.warmup.common.vo.SampleUserVo"/>
+		<package name="org.bravestudy.minto" />
 	</typeAliases>
 	
 	

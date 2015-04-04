@@ -113,13 +113,11 @@ String root = request.getContextPath();
 							<div class="pbar" id='astbar'>0%</div>
 						</div>
 						<div id="zn_nivo" class="zn_nivo">
-						
-						<c:forEach items="${arlTop1}" var="top1">
+<c:forEach items="${arlTop1}" var="top1">
 							<img
 								src="http://www.laosworld.net/files/attach/images/186/325/053/c6a7ebccca33df7b4fccae509982fdbf.jpg"
 								alt="봄 사진" title="#nv_51" />
-						</c:forEach>
-										
+</c:forEach>				
 							<img
 								src="http://asterialite.towfiqi.com/wp-content/uploads/2013/11/46456454-5_mini.jpg"
 								alt="Lorem Ipsum Dolor Sit Amet" title="#nv_52" />
@@ -131,16 +129,16 @@ String root = request.getContextPath();
 								alt="The Third Slide" title="#nv_54" />
 						</div>
 
-						<c:forEach items="${arlTop1}" var="top1">
-							<div id="nv_51" class="nivo-html-caption sld_layout1">
-								<div class="nivoinner sld_layout1">
-									<h3 class="entry-title">
-										<a>${top1.title}</a>
-									</h3>
-									<p>${top1.content}</p>
-								</div>
+			<c:forEach items="${arlTop1}" var="top1">
+					<div id="nv_51" class="nivo-html-caption sld_layout1">
+							<div class="nivoinner sld_layout1">
+								<h3 class="entry-title">
+									<a>${top1.title}</a>
+								</h3>
+								<p>${top1.content}</p>
 							</div>
-						</c:forEach>
+						</div>
+			</c:forEach>
 						
 						<div id="nv_52" class="nivo-html-caption sld_layout2">
 							<div class="nivoinner sld_layout2">
